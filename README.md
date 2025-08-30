@@ -1,4 +1,3 @@
-Got it ✅ — here’s the **entire rephrased version in markdown**:
 
 ````markdown
 # PresentationAI
