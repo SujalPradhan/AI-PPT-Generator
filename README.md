@@ -93,8 +93,3 @@ Licensed under MIT – see the LICENSE file for details.
 * PptxGenJS for creating PowerPoint files
 * JSZip for parsing uploads
 * Integrations with multiple LLM APIs
-
-```
-
-Do you want me to also **make a polished README.md version** (with emojis, badges, and section dividers) so it feels more GitHub-ready?
-```
