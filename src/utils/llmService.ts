@@ -41,10 +41,22 @@ Return only the JSON array, no additional text.
   const response = await callLLM(request.provider, request.apiKey, prompt);
   
   try {
-    // Parse the JSON response
-    const slides = JSON.parse(response);
-    return Array.isArray(slides) ? slides : [];
+    // Clean and parse the JSON response
+    const cleanedResponse = cleanJsonResponse(response);
+    console.log('Cleaned response:', cleanedResponse);
+    
+    const slides = JSON.parse(cleanedResponse);
+    console.log('Parsed slides:', slides);
+    
+    if (Array.isArray(slides) && slides.length > 0) {
+      return slides;
+    } else {
+      console.warn('No valid slides found in response');
+      return parseSlideStructureFromText(response);
+    }
   } catch (error) {
+    console.error('JSON parsing failed:', error);
+    console.log('Raw response:', response);
     // Fallback parsing if JSON is malformed
     return parseSlideStructureFromText(response);
   }
