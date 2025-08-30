@@ -62,6 +62,40 @@ Return only the JSON array, no additional text.
   }
 }
 
+function cleanJsonResponse(response: string): string {
+  // Remove markdown code blocks and any surrounding text
+  let cleaned = response;
+  
+  // Look for JSON content between ```json and ``` markers
+  const jsonMatch = cleaned.match(/```json\s*([\s\S]*?)\s*```/);
+  if (jsonMatch) {
+    cleaned = jsonMatch[1];
+  } else {
+    // If no markdown blocks, try to find JSON array
+    const arrayMatch = cleaned.match(/(\[[\s\S]*\])/);
+    if (arrayMatch) {
+      cleaned = arrayMatch[1];
+    }
+  }
+  
+  // Clean up any remaining markdown or extra text
+  cleaned = cleaned.replace(/```json/g, '').replace(/```/g, '');
+  
+  // Trim whitespace and remove any leading/trailing non-JSON content
+  cleaned = cleaned.trim();
+  
+  // If it doesn't start with [, try to find the first [ and last ]
+  if (!cleaned.startsWith('[')) {
+    const firstBracket = cleaned.indexOf('[');
+    const lastBracket = cleaned.lastIndexOf(']');
+    if (firstBracket !== -1 && lastBracket !== -1 && lastBracket > firstBracket) {
+      cleaned = cleaned.substring(firstBracket, lastBracket + 1);
+    }
+  }
+  
+  return cleaned;
+}
+
 async function callLLM(provider: string, apiKey: string, prompt: string): Promise<string> {
   let endpoint = '';
   let headers: Record<string, string> = {
