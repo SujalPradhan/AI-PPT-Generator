@@ -12,15 +12,15 @@ export function LLMConfig() {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-secondary-800 rounded-xl shadow-md border border-secondary-700 p-6">
       <div className="flex items-center space-x-2 mb-4">
-        <Brain className="h-5 w-5 text-purple-600" />
-        <h2 className="text-lg font-semibold text-gray-900">AI Configuration</h2>
+        <Brain className="h-5 w-5 text-primary-500" />
+        <h2 className="text-lg font-semibold text-white">AI Configuration</h2>
       </div>
 
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-3">
+          <label className="block text-sm font-medium text-primary-100 mb-3">
             Choose LLM Provider
           </label>
           <div className="grid gap-3">
@@ -39,11 +39,11 @@ export function LLMConfig() {
                 />
                 <div className={`p-3 border-2 rounded-lg cursor-pointer transition-all ${
                   state.llmProvider === provider.id
-                    ? 'border-blue-500 bg-blue-50'
-                    : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                    ? 'border-primary-500 bg-secondary-700'
+                    : 'border-secondary-600 hover:border-secondary-500 hover:bg-secondary-700'
                 }`}>
-                  <div className="font-medium text-gray-900">{provider.name}</div>
-                  <div className="text-sm text-gray-600">{provider.description}</div>
+                  <div className="font-medium text-white">{provider.name}</div>
+                  <div className="text-sm text-primary-200">{provider.description}</div>
                 </div>
               </label>
             ))}
@@ -51,23 +51,23 @@ export function LLMConfig() {
         </div>
 
         <div>
-          <label htmlFor="api-key" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="api-key" className="block text-sm font-medium text-primary-100 mb-2">
             API Key
           </label>
           <div className="relative">
-            <Key className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Key className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-primary-300" />
             <input
               type="password"
               id="api-key"
               value={state.apiKey}
               onChange={(e) => dispatch({ type: 'SET_API_KEY', payload: e.target.value })}
               placeholder="Enter your API key..."
-              className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full pl-10 pr-3 py-2 bg-secondary-700 text-white border border-secondary-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
             />
           </div>
           <div className="flex items-start space-x-2 mt-2">
-            <Shield className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-            <p className="text-sm text-gray-600">
+            <Shield className="h-4 w-4 text-primary-400 mt-0.5 flex-shrink-0" />
+            <p className="text-sm text-primary-200">
               Your API key is never stored or logged. It's only used for the current session.
             </p>
           </div>

@@ -42,10 +42,10 @@ export function TemplateUpload() {
   }, []);
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-secondary-800 rounded-xl shadow-md border border-secondary-700 p-6">
       <div className="flex items-center space-x-2 mb-4">
-        <FileType className="h-5 w-5 text-indigo-600" />
-        <h2 className="text-lg font-semibold text-gray-900">PowerPoint Template (Optional)</h2>
+        <FileType className="h-5 w-5 text-primary-500" />
+        <h2 className="text-lg font-semibold text-white">PowerPoint Template (Optional)</h2>
       </div>
 
       <div

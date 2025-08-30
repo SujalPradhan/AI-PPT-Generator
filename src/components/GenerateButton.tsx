@@ -41,23 +41,23 @@ export function GenerateButton() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Generate Presentation</h2>
+    <div className="bg-secondary-800 rounded-xl shadow-md border border-secondary-700 p-6">
+      <h2 className="text-lg font-semibold text-white mb-4">Generate Presentation</h2>
       
       <div className="space-y-4">
-        <div className="bg-gray-50 rounded-lg p-4">
-          <h3 className="font-medium text-gray-900 mb-2">Ready to Generate?</h3>
+        <div className="bg-secondary-700 rounded-lg p-4">
+          <h3 className="font-medium text-white mb-2">Ready to Generate?</h3>
           <div className="space-y-2 text-sm">
-            <div className={`flex items-center space-x-2 ${state.inputText.trim() ? 'text-green-600' : 'text-gray-400'}`}>
-              <div className={`w-2 h-2 rounded-full ${state.inputText.trim() ? 'bg-green-500' : 'bg-gray-300'}`} />
+            <div className={`flex items-center space-x-2 ${state.inputText.trim() ? 'text-primary-300' : 'text-secondary-400'}`}>
+              <div className={`w-2 h-2 rounded-full ${state.inputText.trim() ? 'bg-primary-500' : 'bg-secondary-500'}`} />
               <span>Content provided</span>
             </div>
-            <div className={`flex items-center space-x-2 ${state.apiKey ? 'text-green-600' : 'text-gray-400'}`}>
-              <div className={`w-2 h-2 rounded-full ${state.apiKey ? 'bg-green-500' : 'bg-gray-300'}`} />
+            <div className={`flex items-center space-x-2 ${state.apiKey ? 'text-primary-300' : 'text-secondary-400'}`}>
+              <div className={`w-2 h-2 rounded-full ${state.apiKey ? 'bg-primary-500' : 'bg-secondary-500'}`} />
               <span>API key configured</span>
             </div>
-            <div className={`flex items-center space-x-2 ${state.templateData ? 'text-green-600' : 'text-blue-500'}`}>
-              <div className={`w-2 h-2 rounded-full ${state.templateData ? 'bg-green-500' : 'bg-blue-400'}`} />
+            <div className={`flex items-center space-x-2 ${state.templateData ? 'text-primary-300' : 'text-primary-400'}`}>
+              <div className={`w-2 h-2 rounded-full ${state.templateData ? 'bg-primary-500' : 'bg-primary-600'}`} />
               <span>{state.templateData ? 'Template analyzed' : 'Default styling (no template)'}</span>
             </div>
           </div>
@@ -68,8 +68,8 @@ export function GenerateButton() {
           disabled={!canGenerate || state.isProcessing}
           className={`w-full flex items-center justify-center space-x-2 py-3 px-4 rounded-lg font-medium transition-all ${
             canGenerate && !state.isProcessing
-              ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
-              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              ? 'bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+              : 'bg-secondary-600 text-secondary-400 cursor-not-allowed'
           }`}
         >
           {state.isProcessing ? (
@@ -88,7 +88,7 @@ export function GenerateButton() {
         {state.generatedSlides.length > 0 && (
           <button
             onClick={() => dispatch({ type: 'SET_SHOW_PREVIEW', payload: true })}
-            className="w-full flex items-center justify-center space-x-2 py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
+            className="w-full flex items-center justify-center space-x-2 py-2 px-4 bg-secondary-700 hover:bg-secondary-600 text-primary-100 rounded-lg transition-colors"
           >
             <Download className="h-4 w-4" />
             <span>View & Download</span>

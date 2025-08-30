@@ -11,31 +11,31 @@
 
 @layer components {
   .gradient-primary {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600;
+    @apply bg-gradient-to-r from-primary-600 to-primary-800;
   }
   
   .gradient-secondary {
-    @apply bg-gradient-to-r from-purple-600 to-pink-600;
+    @apply bg-gradient-to-r from-secondary-800 to-secondary-900;
   }
   
   .gradient-accent {
-    @apply bg-gradient-to-r from-green-600 to-teal-600;
+    @apply bg-gradient-to-r from-primary-500 to-primary-700;
   }
 
   .input-focus {
-    @apply focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply focus:ring-2 focus:ring-primary-500 focus:border-transparent;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-lg;
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors;
+    @apply bg-secondary-700 hover:bg-secondary-600 text-primary-100 font-medium py-2 px-4 rounded-lg transition-colors;
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-sm border border-gray-200;
+    @apply bg-secondary-800 rounded-xl shadow-md border border-secondary-700;
   }
 
   .animate-pulse-slow {

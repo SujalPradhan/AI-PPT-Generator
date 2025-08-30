@@ -12,7 +12,7 @@ import { AppProvider } from './context/AppContext';
 function App() {
   return (
     <AppProvider>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      <div className="min-h-screen bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-800">
         <Header />
         
         <main className="container mx-auto px-4 py-8 max-w-6xl">
@@ -44,8 +44,8 @@ function App() {
           <PreviewModal />
         </main>
 
-        <footer className="bg-white border-t border-gray-200 py-8 mt-16">
-          <div className="container mx-auto px-4 text-center text-gray-600">
+        <footer className="bg-secondary-800 border-t border-secondary-700 py-8 mt-16">
+          <div className="container mx-auto px-4 text-center text-primary-100">
             <p>Transform your text into professional presentations with AI-powered intelligence</p>
             <p className="text-sm mt-2">API keys are never stored or logged for your security</p>
           </div>
